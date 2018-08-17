@@ -80,7 +80,7 @@ client.on('message', async msg => {
 				try {
 					    let filter = m => m.author.id === message.author.id;
 					var videos = await youtube.searchVideos(searchString, 5);
-					let index = 0;
+					let index = 20;
 					const embed1 = new Discord.RichEmbed()
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
