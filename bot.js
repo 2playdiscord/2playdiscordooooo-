@@ -8,19 +8,15 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const client = new Discord.Client();
 
-
-client.on('message', message => {
-    var prefix = "2";
-    var args = message.content.split(" ").slice(1).join(" ")
-  if(message.content.startsWith(prefix + 'setStatus')) {
-    if(!args) return message.reply(`\n!setStatus online \n!setStatus dnd \n!setStatus idle \n!setStatus invisible`); 
-    client.user.setStatus(args)
-        message.channel.send(`\`Status Of Bot Set ${args}\``);
-        
-    
-    }
-});
-
+/*
+البكجآت
+npm install discord.js
+npm install ytdl-core
+npm install get-youtube-id
+npm install youtube-info
+npm install simple-youtube-api
+npm install queue
+*/
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -32,7 +28,7 @@ client.on('ready', () => {
      client.user.setActivity("Type 3play",{type: 'WATCHING'});
 
 });
-const prefix = "2"
+const prefix = "3"
 client.on('message', async msg => {
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -235,3 +231,4 @@ client.on('message', msg => {
 })
 
 	client.login(process.env.BOT_TOKEN);
+})
