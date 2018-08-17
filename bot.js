@@ -34,9 +34,6 @@ client.on('ready', () => {
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Codes] ${client.users.size}`)
     client.user.setStatus("idle")
-});
-client.on('ready', () => {
-     client.user.setActivity("Type 3play",{type: 'WATCHING'});
 
 });
 const prefix = "3"
