@@ -8,6 +8,17 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const client = new Discord.Client();
 
+client.on('message', message => {
+    var prefix = "2";
+    var args = message.content.split(" ").slice(1).join(" ")
+  if(message.content.startsWith(prefix + 'setStatus')) {
+    if(!args) return message.reply(`\n!setStatus online \n!setStatus dnd \n!setStatus idle \n!setStatus invisible`); 
+    client.user.setStatus(args)
+        message.channel.send(`\`Status Of Bot Set ${args}\``);
+        
+    
+    }
+});
 /*
 البكجآت
 npm install discord.js
