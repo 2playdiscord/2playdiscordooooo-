@@ -84,12 +84,12 @@ client.on('message', async msg => {
 					const embed1 = new Discord.RichEmbed()
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
-					.setFooter("Shadow")
+					.setFooter("AG STORE")
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)})
 
 					try {
 						var response = await msg.channel.awaitMessages(m => m.author.id === message.author.id, m.content > 0 && m.content < 5, {
-							maxMatches: 1,
+							maxMatches: 20,
 							time: 15000,
 							errors: ['time']
 						});
