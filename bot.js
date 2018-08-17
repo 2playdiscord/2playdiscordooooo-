@@ -80,7 +80,7 @@ client.on('message', async msg => {
 				try {
 					    let filter = m => m.author.id === message.author.id;
 					var videos = await youtube.searchVideos(searchString, 5);
-					let index = 20;
+					let index = 0;
 					const embed1 = new Discord.RichEmbed()
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
@@ -90,7 +90,7 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 					try {
 						var response = await msg.channel.awaitMessages(m => m.author.id === message.author.id, m.content > 0 && m.content < 5, {
 							maxMatches: 20,
-							time: 15000,
+							time: 20,
 							errors: ['time']
 						});
 					} catch (err) {
